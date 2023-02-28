@@ -1,0 +1,40 @@
+<div class="news-container">
+    <h1 class="title">
+        Messages and News
+    </h1>
+    <div class="news-container-details">
+        <div class="author-list">
+            <div *ngFor="let author of authors">
+                <div class="author-list-item">
+                    <div class="author-list-info">
+                        <p >{{author.name}}</p>
+                        <p >{{author.designation}}</p>
+                    </div>
+                    <app-spacer [width]=20></app-spacer>
+                    <img src={{author.imageUrl}} class="author-image"/>
+                </div>
+            </div>
+        </div>
+        <div class="news-card">
+            <div class="news-card-header">
+                <p>News Flow</p>
+            </div>
+            <div class="line"></div>
+                <marquee direction="up" class="news-list">
+                    <div *ngFor="let news of newsList">
+                        <div class="news-list-item">
+                            <div class="dot"> </div>
+                            <app-spacer [width]=20></app-spacer>
+                            <div class="news-item-content">
+                               {{news.title}}
+                               <br/>
+                                {{news.subtitle}}
+                            </div>
+                            
+                        </div>
+                    </div>
+                </marquee>
+            <div class="news-card-footer"> <p>View All News</p></div>
+        </div>
+    </div>
+</div>

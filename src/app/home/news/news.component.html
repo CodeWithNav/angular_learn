@@ -20,7 +20,7 @@
                 <p>News Flow</p>
             </div>
             <div class="line"></div>
-                <marquee direction="up" class="news-list">
+                <marquee direction="up" class="news-list" onmouseover="this.stop();" onmouseout="this.start();" scrollamount="4">
                     <div *ngFor="let news of newsList">
                         <div class="news-list-item">
                             <div class="dot"> </div>
@@ -29,6 +29,7 @@
                                {{news.title}}
                                <br/>
                                 {{news.subtitle}}
+                               <div class="hr-line"></div>
                             </div>
                             
                         </div>

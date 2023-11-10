@@ -13,6 +13,8 @@ jobs:
         uses: actions/setup-node@v4.0.0
       - name: Npm Install
         run: npm i
+      - name: Install Angular CLI
+        run: npm i @angular/cli
       - name: Build Project
         run: ng build
   

@@ -25,7 +25,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: 'dist/angular_learn/'
+          path: 'dist/learn-angular/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2

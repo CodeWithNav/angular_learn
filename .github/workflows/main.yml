@@ -13,4 +13,6 @@ jobs:
         uses: actions/setup-node@v4.0.0
       - name: Npm Install
         run: npm i
+      - name: Build Project
+        run: ng build
   

@@ -5,9 +5,9 @@ on:
 
 jobs:
   build:
-    permissions:
-      pages: write      
-      id-token: write
+    # permissions:
+    #   pages: write      
+    #   id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -20,14 +20,11 @@ jobs:
         run: npm install -g @angular/cli
       - name: Build Project
         run: ng build
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Deploy web To GH-Page
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: 'dist/learn-angular/'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: dist/learn-angular/
       
   

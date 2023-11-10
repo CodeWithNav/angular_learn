@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.3
         with:
           name: web-build
-          path: public/
+          path: dist/
       - name: Download a Build Artifact
         uses: actions/download-artifact@v2.1.1
         with:
